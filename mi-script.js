@@ -11,7 +11,7 @@ notaEstudiante=9;
 console.log(nombreCurso);
 console.log(notaEstudiante);
 
-//Tipos de Datos
+//TIPOS DE DATOS
 // String (texto)
 let nombre = "Valentina";
 let saludo = 'Hola mundo';
