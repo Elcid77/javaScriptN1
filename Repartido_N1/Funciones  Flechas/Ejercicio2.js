@@ -57,21 +57,6 @@ for(const[clave, valor] of Object.entries(usuario)){
    
 }
 
-Object.entries(profesor).forEach(([clave, valor]) => {
-    
-    // Corregido a 'object' en minúscula
-    if (typeof valor === 'object' && valor !== null && !Array.isArray(valor)) {
-        console.log(`${clave}:`);
-        
-        // Segundo bucle anidado también con forEach
-        Object.entries(valor).forEach(([subClave, subValor]) => {
-            console.log(`  ${subClave} : ${subValor}`);
-        });
-        
-    } else {
-        console.log(`${clave}: ${valor}`);
-    }
-});
 
 //console.log(JSON.stringify(usuario, null, 2));
 
