@@ -216,7 +216,20 @@ const cantaTraslados = traslados.reduce((ac, t) => {
 
 const estadoAmbulacia = ambulancias.some((a) => a.estado === "mantenimiento");
 console.log(estadoAmbulacia);
-const menos20000= ambulancias.every((a)=> a.kmRecorridos < 200000);
+const menos20000 = ambulancias.every((a) => a.kmRecorridos < 200000);
 console.log(menos20000);
 const trasladoMedico = traslados.some((t) => t.medico === "Dra. Torres");
 console.log(trasladoMedico);
+// Ejercicio 10
+// Ejemplo de uso de sort().
+const frutas = ['manzana', 'pera', 'banana', 'kiwi'];
+
+frutas.sort();
+console.log(frutas)
+console.log(frutas);
+// Resultado: [ 'banana', 'kiwi', 'manzana', 'pera' ]
+
+traslados.sort((a, b) => a.id - b.id);
+// Ya estaban ordenados por id, resultado igual.
+// ATENCIÓN: sort muta el arreglo original traslados.
+

@@ -1,11 +1,52 @@
 
-const traslados = [
-  { id: 1, paciente: 'Ana Rodríguez',   destino: 'CTI',         estado: 'completado' },
-  { id: 2, paciente: 'Luis Fernández',  destino: 'Emergencias', estado: 'pendiente'  },
-  { id: 3, paciente: 'Marta González',  destino: 'Imagenología', estado: 'en curso'  },
-  { id: 4, paciente: 'Pedro Suárez',    destino: 'CTI',         estado: 'pendiente'  },
-  { id: 5, paciente: 'Carmen López',    destino: 'Cirugía',     estado: 'completado' },
-];
+/* Para poder usar un retorno implícito, se deben cumplir estas 4 condiciones 
+simultáneamente:
+
+1. Una sola expresión:
+   Debe existir una única operación que devuelva un valor.
+   No importa si se distribuye en varias líneas para mejorar la legibilidad; debe seguir siendo una única expresión evaluable.
+
+2. Sin estructuras de control:
+   No se pueden utilizar if, for, while, etc.
+   Para condiciones, únicamente se permite el operador ternario (? :).
+
+3. Sin llaves {} ni la palabra return:
+   Al eliminar las llaves, el retorno se realiza automáticamente.
+   Si se utilizan llaves, será necesario escribir return explícitamente.
+
+4. Objetos entre paréntesis ({ ... }):
+   Si se retorna un objeto literal, es obligatorio envolverlo entre paréntesis para que JavaScript no confunda las llaves del objeto con las llaves de un bloque de código. */
+
+
+
+
+
+// Función A
+function calcularEdad(anioNacimiento) {
+  return 2026 - anioNacimiento;
+}
+ 
+// Función B
+function describirTraslado(t) {
+  const texto = 'Paciente: ' + t.paciente;
+  const destino = ' → Destino: ' + t.destino;
+  return texto + destino;
+}
+ 
+// Función C
+function crearRegistro(id, paciente) {
+  return { id: id, paciente: paciente, fecha: new Date() };
+}
+ 
+// Función D
+function esMayorDeEdad(edad) {
+  if (edad >= 18) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 // ==========================================
 // Función A: Cálculo de edad
@@ -17,6 +58,7 @@ function calcularEdad(anioNacimiento) {
 }
 
 // Versión flecha: Retorna directamente un String (texto) usando Template Literals (``).
+// interpolacion 
 // Al tener un solo argumento (a), no necesita paréntesis.
 const calcularEdad2 = a => ` ${2026 - a} años`;
 
@@ -79,8 +121,8 @@ function esMayorDeEdad(edad) {
 
 // Versión flecha original: Evalúa la condición dentro de un String. 
 // Ojo: Esto devuelve el texto " false " (un string), no el valor booleano 'false'.
-const esMayorDeEdad2 = edad => ` ${edad >= 18} `;
-console.log(esMayorDeEdad2(17)); // Resultado: " false " (Texto)
+const esMayorDeEdad2 = edad => ` ${edad >= 18} ? false: true`;
+console.log(esMayorDeEdad2(17)); // Resultado:  " false " (Texto)
 
 /* 💡 TIP DE OPTIMIZACIÓN PARA LA FUNCIÓN D:
   En JavaScript, las comparaciones ya devuelven de forma nativa 'true' o 'false'. 
