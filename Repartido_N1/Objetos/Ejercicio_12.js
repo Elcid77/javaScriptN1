@@ -28,3 +28,15 @@ console.log(primero);  // 'azul'
 console.log(segundo);  // 'blanco'
 console.log(tercero);  // 'naranja'
 
+//Desestructuración en parámetros de función arrow
+const mostrarTraslado = ({ id, medico, distanciaKm }) =>
+  console.log('Traslado #' + id + ' — ' + medico + ' — ' + distanciaKm + ' km');
+ 
+mostrarTraslado(traslado);
+// 'Traslado #3 — Dr. Pérez — 2.5 km'
+ 
+// La desestructuración ocurre directamente en la declaración de parámetros.
+// Equivale a: const { id, medico, distanciaKm } = traslado; dentro del cuerpo.
+
+
+
